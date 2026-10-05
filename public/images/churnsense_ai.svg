@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="churnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180e29" />
+      <stop offset="50%" stop-color="#24143d" />
+      <stop offset="100%" stop-color="#0a0512" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#churnBg)" rx="16" />
+
+  <!-- Customer Churn Probability Distribution -->
+  <g transform="translate(100, 150)">
+    <rect width="280" height="200" rx="8" fill="rgba(30, 41, 59, 0.85)" stroke="#c084fc" stroke-width="1.5" />
+    <text x="18" y="28" fill="#d8b4fe" font-family="monospace" font-size="11" font-weight="bold">CHURN RISK PREDICTION</text>
+    <!-- Bell Curve -->
+    <path d="M 20 160 Q 90 160, 120 70 T 220 160 T 260 160" fill="none" stroke="#a855f7" stroke-width="2.5" />
+    <line x1="160" y1="50" x2="160" y2="160" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4 4" />
+    <text x="165" y="65" fill="#fda4af" font-family="monospace" font-size="9">Threshold: 0.65</text>
+    <text x="20" y="185" fill="#94a3b8" font-family="monospace" font-size="10">Low Risk (74%) | High Risk (26%)</text>
+  </g>
+
+  <!-- Feature Importance Breakdown -->
+  <g transform="translate(420, 150)">
+    <rect width="280" height="200" rx="8" fill="rgba(30, 41, 59, 0.85)" stroke="#a855f7" stroke-width="1.5" />
+    <text x="18" y="28" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold">XGBOOST FEATURE IMPORTANCE</text>
+    <text x="18" y="60" fill="#cbd5e1" font-family="monospace" font-size="10">Contract Type (Month-to-month)</text>
+    <rect x="18" y="68" width="190" height="12" rx="3" fill="#a855f7" />
+    <text x="18" y="100" fill="#cbd5e1" font-family="monospace" font-size="10">Tenure Duration (Months)</text>
+    <rect x="18" y="108" width="140" height="12" rx="3" fill="#818cf8" />
+    <text x="18" y="140" fill="#cbd5e1" font-family="monospace" font-size="10">Monthly Charges ($)</text>
+    <rect x="18" y="148" width="105" height="12" rx="3" fill="#38bdf8" />
+    <text x="18" y="182" fill="#34d399" font-family="monospace" font-size="10">Model AUC-ROC: 0.86</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#c084fc" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">CHURNSENSE AI // CUSTOMER CHURN PREDICTION</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">SUPERVISED ML • XGBOOST &amp; LOGISTIC REGRESSION • FEATURE IMPORTANCE</text>
+
+  <rect x="40" y="440" width="240" height="34" rx="8" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="1" />
+  <text x="55" y="462" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold">CATEGORY: DATA SCIENCE</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(129, 140, 248, 0.15)" stroke="#818cf8" stroke-width="1" />
+  <text x="535" y="462" fill="#818cf8" font-family="monospace" font-size="11" font-weight="bold">EXPLAINABLE ML DASHBOARD</text>
+</svg>

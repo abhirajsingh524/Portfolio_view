@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aegisBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="aegisGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#aegisBg)" rx="16" />
+
+  <!-- Grid overlay -->
+  <g stroke="#38bdf8" stroke-width="0.5" opacity="0.08">
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="500" y1="0" x2="500" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <!-- Audio Waveform / MFCC Spectrogram Simulation -->
+  <path d="M 80 250 Q 130 180, 180 250 T 280 250 T 380 200 T 480 300 T 580 220 T 680 250 T 740 250" fill="none" stroke="url(#waveGrad)" stroke-width="3" filter="url(#aegisGlow)" />
+  <path d="M 80 250 Q 140 310, 200 250 T 300 270 T 400 180 T 500 290 T 600 240 T 700 250" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.6" stroke-dasharray="4 3" />
+
+  <!-- Spectrogram Frequency Bars -->
+  <g fill="#38bdf8" opacity="0.4">
+    <rect x="120" y="320" width="8" height="40" rx="3" />
+    <rect x="140" y="300" width="8" height="60" rx="3" />
+    <rect x="160" y="280" width="8" height="80" rx="3" />
+    <rect x="180" y="310" width="8" height="50" rx="3" />
+    <rect x="200" y="290" width="8" height="70" rx="3" />
+    <rect x="220" y="330" width="8" height="30" rx="3" />
+    <rect x="580" y="310" width="8" height="50" rx="3" />
+    <rect x="600" y="270" width="8" height="90" rx="3" />
+    <rect x="620" y="290" width="8" height="70" rx="3" />
+    <rect x="640" y="320" width="8" height="40" rx="3" />
+  </g>
+
+  <!-- Central Verification Shield -->
+  <g transform="translate(400, 220) scale(1.1)" filter="url(#aegisGlow)">
+    <path d="M 0 -80 L 60 -50 L 60 20 C 60 65, 0 95, 0 95 C 0 95, -60 65, -60 20 L -60 -50 Z" fill="rgba(15, 23, 42, 0.85)" stroke="url(#shieldGrad)" stroke-width="3" />
+    <!-- Biometric Voice Embedding Core -->
+    <circle cx="0" cy="5" r="28" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="6 4" />
+    <circle cx="0" cy="5" r="14" fill="#6366f1" opacity="0.8" />
+    <!-- Sound Waves inside Shield -->
+    <path d="M -15 5 Q -10 -5, 0 5 T 15 5" fill="none" stroke="#fff" stroke-width="2" />
+  </g>
+
+  <!-- Anomaly Detection Pulse Radar -->
+  <circle cx="400" cy="225" r="140" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 8" opacity="0.3" />
+  <circle cx="400" cy="225" r="190" fill="none" stroke="#a855f7" stroke-width="0.8" opacity="0.2" />
+
+  <!-- Verification Labels -->
+  <text x="40" y="50" fill="#38bdf8" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">AEGIS // VOICE CLONING IMPERSONATION DETECTION</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">SPEAKER EMBEDDING VERIFICATION • MFCC SPECTROGRAM ANALYSIS</text>
+  
+  <rect x="40" y="430" width="220" height="34" rx="8" fill="rgba(14, 165, 233, 0.15)" stroke="#38bdf8" stroke-width="1" />
+  <text x="55" y="452" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">STATUS: LOW LATENCY INFERENCE</text>
+
+  <rect x="520" y="430" width="240" height="34" rx="8" fill="rgba(168, 85, 247, 0.15)" stroke="#a855f7" stroke-width="1" />
+  <text x="535" y="452" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold">VOICE AUTH: REAL-TIME WEBSOCKET</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180b14" />
+      <stop offset="50%" stop-color="#2b0f20" />
+      <stop offset="100%" stop-color="#0a0308" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bpBg)" rx="16" />
+
+  <!-- PPG Pulse Wave / Sensor Signal -->
+  <g transform="translate(100, 150)">
+    <rect width="360" height="200" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#f43f5e" stroke-width="1.5" />
+    <text x="18" y="28" fill="#fda4af" font-family="monospace" font-size="11" font-weight="bold">PPG OSCILLOMETRIC SENSOR WAVE</text>
+    
+    <!-- Heartbeat Pulse Graph -->
+    <path d="M 20 120 L 70 120 L 85 90 L 100 150 L 115 50 L 130 140 L 145 110 L 160 120 L 210 120 L 225 90 L 240 150 L 255 50 L 270 140 L 285 110 L 300 120 L 340 120" fill="none" stroke="#f43f5e" stroke-width="2.5" />
+
+    <text x="18" y="180" fill="#94a3b8" font-family="monospace" font-size="10">Sampling Rate: 100Hz • Digital Bandpass Filtered</text>
+  </g>
+
+  <!-- Digital BP Readout Panel -->
+  <g transform="translate(490, 150)">
+    <rect width="210" height="200" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="18" y="30" fill="#7dd3fc" font-family="monospace" font-size="11" font-weight="bold">AI SIGNAL ESTIMATE</text>
+    <text x="18" y="70" fill="#94a3b8" font-family="monospace" font-size="10">SYSTOLIC (mmHg)</text>
+    <text x="18" y="105" fill="#f43f5e" font-family="monospace" font-size="28" font-weight="bold">118</text>
+    <text x="18" y="135" fill="#94a3b8" font-family="monospace" font-size="10">DIASTOLIC (mmHg)</text>
+    <text x="18" y="170" fill="#38bdf8" font-family="monospace" font-size="28" font-weight="bold">78</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#fb7185" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">BP DETECTION MACHINE // HEALTHCARE &amp; SENSORS</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">SENSOR ANALYTICS • OSCILLOMETRIC DIGITAL SIGNAL PROCESSING • EMBEDDED AI</text>
+
+  <rect x="40" y="440" width="240" height="34" rx="8" fill="rgba(244, 63, 94, 0.15)" stroke="#f43f5e" stroke-width="1" />
+  <text x="55" y="462" fill="#fb7185" font-family="monospace" font-size="11" font-weight="bold">CATEGORY: AUTOMATION / AI</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1" />
+  <text x="535" y="462" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">HEALTHCARE: SIH-INSPIRED</text>
+</svg>

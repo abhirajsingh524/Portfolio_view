@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="transBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="50%" stop-color="#172a45" />
+      <stop offset="100%" stop-color="#020c1b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#transBg)" rx="16" />
+
+  <!-- Language Translation Flow -->
+  <g transform="translate(100, 150)">
+    <!-- Source Language Box (Hindi / English) -->
+    <rect width="220" height="180" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#64ffda" stroke-width="1.5" />
+    <text x="18" y="30" fill="#64ffda" font-family="monospace" font-size="11" font-weight="bold">SOURCE INPUT (HI / EN)</text>
+    <text x="18" y="65" fill="#f8fafc" font-size="13">"नमस्ते, आप कैसे हैं?"</text>
+    <text x="18" y="95" fill="#94a3b8" font-family="monospace" font-size="10">Phonetic Tokenization: 5 tokens</text>
+    <path d="M 20 130 Q 60 110, 100 130 T 180 130" fill="none" stroke="#64ffda" stroke-width="2" />
+    <text x="18" y="155" fill="#38bdf8" font-family="monospace" font-size="9">Speech-to-Text Acoustic Match</text>
+  </g>
+
+  <!-- Attention Flow Arrow -->
+  <g transform="translate(340, 230)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" />
+    <polygon points="105,0 95,-5 95,5" fill="#38bdf8" />
+    <text x="15" y="-12" fill="#38bdf8" font-family="monospace" font-size="10">Seq2Seq Attention</text>
+  </g>
+
+  <!-- Target Language Box -->
+  <g transform="translate(460, 150)">
+    <rect width="240" height="180" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="18" y="30" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">TARGET TRANSLATION</text>
+    <text x="18" y="65" fill="#f8fafc" font-size="13">"Hello, how are you?"</text>
+    <text x="18" y="95" fill="#94a3b8" font-family="monospace" font-size="10">BLEU Score: High Context Match</text>
+    <rect x="18" y="120" width="200" height="30" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="26" y="140" fill="#7dd3fc" font-family="monospace" font-size="10">Target Latency: &lt; 180ms</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#64ffda" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">MULTILINGUAL TRANSLATION ASSISTANT // NLP</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">CROSS-LINGUAL NLP • SPEECH PROCESSING • SEQUENCE-TO-SEQUENCE</text>
+
+  <rect x="40" y="440" width="230" height="34" rx="8" fill="rgba(100, 255, 218, 0.15)" stroke="#64ffda" stroke-width="1" />
+  <text x="55" y="462" fill="#64ffda" font-family="monospace" font-size="11" font-weight="bold">CATEGORY: NLP</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1" />
+  <text x="535" y="462" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">LOW-LATENCY INFERENCE</text>
+</svg>

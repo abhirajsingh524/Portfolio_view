@@ -1,0 +1,147 @@
+/* Career.css - Experience Section */
+
+.career-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+
+.career-container {
+  width: 100%;
+}
+
+.career-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.career-info-box {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 
+    0 10px 30px -10px var(--shadowGlow1),
+    0 15px 35px -15px var(--shadowGlow2);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-info-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 16px 40px -8px var(--shadowGlow1),
+    0 24px 50px -12px var(--shadowGlow2);
+}
+
+.career-info-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.career-role h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 6px 0;
+}
+
+.career-role h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accentColor);
+  margin: 0 0 8px 0;
+}
+
+.exp-support-tag {
+  display: inline-block;
+  background: rgba(66, 133, 244, 0.12);
+  border: 1px solid rgba(66, 133, 244, 0.3);
+  color: #93c5fd;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.exp-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.date-icon {
+  color: var(--accentColor);
+}
+
+.exp-meta {
+  margin: 12px 0 18px 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.meta-loc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exp-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.check-bullet {
+  color: var(--accentColor);
+  font-size: 15px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .career-info-box {
+    padding: 20px;
+  }
+  .career-role h4 {
+    font-size: 20px;
+  }
+  .exp-date-badge {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,103 @@
+/* SocialIcons.css */
+
+.icons-section {
+  position: fixed;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  bottom: 0;
+  z-index: 90;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.social-icons {
+  position: absolute;
+  left: 0;
+  bottom: 24px;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.social-icons span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover {
+  color: var(--accentColor);
+  border-color: var(--accentColor);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 0 16px var(--accentGlow);
+  transform: translateY(-2px);
+}
+
+.resume-button {
+  position: absolute;
+  z-index: 99;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  bottom: 24px;
+  right: 0;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: all 0.25s ease;
+  pointer-events: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.resume-button:hover {
+  color: var(--accentColor);
+  border-color: var(--accentColor);
+  box-shadow: 0 0 18px var(--accentGlow);
+  transform: translateY(-2px);
+}
+
+.resume-button span {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--accentColor);
+}
+
+@media only screen and (min-width: 1025px) {
+  .social-icons {
+    display: flex;
+  }
+  .resume-button {
+    display: inline-flex;
+  }
+}

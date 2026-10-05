@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="agriBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061a14" />
+      <stop offset="50%" stop-color="#0d2b22" />
+      <stop offset="100%" stop-color="#020d09" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#agriBg)" rx="16" />
+
+  <!-- Crop Leaf Vector Illustration -->
+  <g transform="translate(140, 160)">
+    <!-- Leaf outline -->
+    <path d="M 120 180 C 60 140, 20 60, 60 20 C 120 20, 180 80, 120 180 Z" fill="#15803d" opacity="0.7" stroke="#22c55e" stroke-width="2" />
+    <!-- Leaf central vein -->
+    <path d="M 60 20 Q 90 90, 120 180" stroke="#86efac" stroke-width="2" fill="none" />
+    <!-- Detected disease spot region -->
+    <ellipse cx="85" cy="85" rx="22" ry="18" fill="rgba(234, 179, 8, 0.4)" stroke="#eab308" stroke-width="2" stroke-dasharray="4 3" />
+    <text x="35" y="130" fill="#fef08a" font-family="monospace" font-size="10" font-weight="bold">BLIGHT LESION DETECTED</text>
+  </g>
+
+  <!-- CNN Feature Map Processing View -->
+  <g transform="translate(420, 150)">
+    <rect width="280" height="200" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#10b981" stroke-width="1.5" />
+    <text x="18" y="28" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">CNN CONVOLUTIONAL INFERENCE</text>
+    <text x="18" y="58" fill="#cbd5e1" font-family="monospace" font-size="10">Target: Solanum lycopersicum (Tomato)</text>
+    <text x="18" y="80" fill="#eab308" font-family="monospace" font-size="11" font-weight="bold">Classification: Early Blight</text>
+    <text x="18" y="102" fill="#34d399" font-family="monospace" font-size="11">Confidence: 93.4%</text>
+    <line x1="18" y1="118" x2="260" y2="118" stroke="#334155" stroke-width="1" />
+    <text x="18" y="140" fill="#94a3b8" font-family="monospace" font-size="10">Advisory: Improve canopy aeration;</text>
+    <text x="18" y="158" fill="#94a3b8" font-family="monospace" font-size="10">apply preventative copper-based spray.</text>
+    <text x="18" y="182" fill="#64748b" font-family="monospace" font-size="9">*Educational / Student Project implementation</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">AGRIVISION AI // CROP DISEASE DETECTION</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">COMPUTER VISION • CNN LEAF CLASSIFICATION • SMART AGRICULTURE (SIH-INSPIRED)</text>
+
+  <rect x="40" y="440" width="240" height="34" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="1" />
+  <text x="55" y="462" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">OPENCV + PYTORCH CNN</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1" />
+  <text x="535" y="462" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">THEME: SMART AGRICULTURE</text>
+</svg>

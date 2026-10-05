@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roboBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140f07" />
+      <stop offset="50%" stop-color="#241a0a" />
+      <stop offset="100%" stop-color="#0a0804" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#roboBg)" rx="16" />
+
+  <!-- Robot Vehicle Schematic Diagram -->
+  <g transform="translate(200, 160)">
+    <!-- Chassis -->
+    <rect x="80" y="40" width="240" height="120" rx="14" fill="rgba(30, 41, 59, 0.9)" stroke="#f59e0b" stroke-width="2" />
+    
+    <!-- Monster Wheels -->
+    <rect x="40" y="20" width="45" height="50" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="1.5" />
+    <rect x="40" y="130" width="45" height="50" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="1.5" />
+    <rect x="315" y="20" width="45" height="50" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="1.5" />
+    <rect x="315" y="130" width="45" height="50" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="1.5" />
+
+    <!-- Ultrasonic Eyes / Sensors -->
+    <circle cx="320" cy="80" r="16" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="320" cy="120" r="16" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    
+    <!-- Sensor Beam Waves -->
+    <path d="M 345 80 Q 380 60, 420 80" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" />
+    <path d="M 345 120 Q 380 140, 420 120" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" />
+    <text x="430" y="105" fill="#38bdf8" font-family="monospace" font-size="10">Obstacle Distance: 42cm</text>
+
+    <!-- Microcontroller on chassis -->
+    <rect x="140" y="65" width="120" height="70" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.5" />
+    <text x="155" y="105" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">MCU LOGIC</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#fbbf24" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">MONSTER ROBO CAR // AUTOMATION &amp; ROBOTICS</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">EMBEDDED HARDWARE • ULTRASONIC OBSTACLE SENSING • MOTOR TELEMETRY</text>
+
+  <rect x="40" y="440" width="260" height="34" rx="8" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="1" />
+  <text x="55" y="462" fill="#fbbf24" font-family="monospace" font-size="11" font-weight="bold">CATEGORY: AUTOMATION / ROBOTICS</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1" />
+  <text x="535" y="462" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">BRONZE COMPETITION WINNER</text>
+</svg>

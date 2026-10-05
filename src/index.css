@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+:root,
+[data-theme="cyber-cyan"] {
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  color: #eae5ec;
+  background-color: var(--backgroundColor);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --accentColor: #5eead4;
+  --accentGlow: rgba(94, 234, 212, 0.4);
+  --secondaryAccent: #818cf8;
+  --backgroundColor: #060913;
+  --cardBg: rgba(15, 23, 42, 0.7);
+  --shadowGlow1: rgba(94, 234, 212, 0.28);
+  --shadowGlow2: rgba(129, 140, 248, 0.32);
+  --vh: 100vh;
+  --vh: 100svh;
+}
+
+[data-theme="quantum-emerald"] {
+  --accentColor: #34d399;
+  --accentGlow: rgba(52, 211, 153, 0.45);
+  --secondaryAccent: #38bdf8;
+  --backgroundColor: #040f0c;
+  --cardBg: rgba(6, 26, 20, 0.7);
+  --shadowGlow1: rgba(52, 211, 153, 0.28);
+  --shadowGlow2: rgba(56, 189, 248, 0.32);
+}
+
+[data-theme="cosmic-violet"] {
+  --accentColor: #c084fc;
+  --accentGlow: rgba(192, 132, 252, 0.45);
+  --secondaryAccent: #f472b6;
+  --backgroundColor: #0c0717;
+  --cardBg: rgba(26, 15, 42, 0.7);
+  --shadowGlow1: rgba(192, 132, 252, 0.28);
+  --shadowGlow2: rgba(244, 114, 182, 0.32);
+}
+
+[data-theme="solar-amber"] {
+  --accentColor: #fbbf24;
+  --accentGlow: rgba(251, 191, 36, 0.45);
+  --secondaryAccent: #fb7185;
+  --backgroundColor: #120a04;
+  --cardBg: rgba(36, 19, 9, 0.7);
+  --shadowGlow1: rgba(251, 191, 36, 0.28);
+  --shadowGlow2: rgba(251, 113, 133, 0.32);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  height: auto;
+  background-color: var(--backgroundColor);
+  flex-grow: 1;
+  --cWidth: calc(100% - 40px);
+  --cMaxWidth: 1440px;
+  max-width: 100vw;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accentColor);
+}
+
+main {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.main-active {
+  opacity: 0;
+  animation: fadeIn 1s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.container-main {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.container1 {
+  width: var(--cWidth);
+  height: var(--vh);
+  margin: auto;
+  position: relative;
+}
+
+.split-line {
+  overflow: hidden;
+}
+
+.split-h2 {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.techstack {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: clamp(500px, 80vh, 850px);
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.techstack h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  z-index: 2;
+  color: #f8fafc;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    --cWidth: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .techstack h2 {
+    font-size: 40px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

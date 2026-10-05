@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="resumeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#resumeBg)" rx="16" />
+
+  <!-- Resume Parsing Card -->
+  <g transform="translate(100, 140)">
+    <rect width="180" height="220" rx="8" fill="rgba(31, 41, 55, 0.85)" stroke="#6366f1" stroke-width="1.5" />
+    <text x="18" y="30" fill="#818cf8" font-family="monospace" font-size="11" font-weight="bold">RESUME PARSER</text>
+    <line x1="18" y1="50" x2="160" y2="50" stroke="#4b5563" stroke-width="2" />
+    <line x1="18" y1="70" x2="120" y2="70" stroke="#4b5563" stroke-width="2" />
+    <rect x="18" y="90" width="60" height="18" rx="4" fill="#6366f1" opacity="0.3" />
+    <text x="24" y="103" fill="#c7d2fe" font-family="monospace" font-size="9">Python</text>
+    <rect x="85" y="90" width="65" height="18" rx="4" fill="#a855f7" opacity="0.3" />
+    <text x="92" y="103" fill="#e9d5ff" font-family="monospace" font-size="9">PyTorch</text>
+    <line x1="18" y1="130" x2="150" y2="130" stroke="#4b5563" stroke-width="2" />
+    <line x1="18" y1="150" x2="110" y2="150" stroke="#4b5563" stroke-width="2" />
+    <text x="18" y="195" fill="#38bdf8" font-family="monospace" font-size="10">Skills Extracted: 18</text>
+  </g>
+
+  <!-- Semantic Matching Pipeline -->
+  <g transform="translate(340, 200)">
+    <!-- Match Score Gauge -->
+    <circle cx="60" cy="50" r="45" fill="none" stroke="#374151" stroke-width="8" />
+    <circle cx="60" cy="50" r="45" fill="none" stroke="#22c55e" stroke-width="8" stroke-dasharray="210 280" />
+    <text x="42" y="56" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">88%</text>
+    <text x="15" y="120" fill="#94a3b8" font-family="monospace" font-size="10">JOB MATCH SCORE</text>
+  </g>
+
+  <!-- Job Description Gap Analysis -->
+  <g transform="translate(480, 140)">
+    <rect width="220" height="220" rx="8" fill="rgba(31, 41, 55, 0.85)" stroke="#22c55e" stroke-width="1.5" />
+    <text x="18" y="30" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">SKILL GAP ANALYSIS</text>
+    <text x="18" y="60" fill="#4ade80" font-family="monospace" font-size="10">✓ Machine Learning</text>
+    <text x="18" y="85" fill="#4ade80" font-family="monospace" font-size="10">✓ Fast API &amp; Rest</text>
+    <text x="18" y="110" fill="#4ade80" font-family="monospace" font-size="10">✓ Vector Embeddings</text>
+    <text x="18" y="135" fill="#f87171" font-family="monospace" font-size="10">✗ Docker / CI-CD (Missing)</text>
+    <rect x="18" y="165" width="180" height="34" rx="6" fill="rgba(99, 102, 241, 0.2)" stroke="#6366f1" stroke-width="1" />
+    <text x="26" y="186" fill="#c7d2fe" font-family="monospace" font-size="9">Recommendation: Add CI/CD</text>
+  </g>
+
+  <!-- Header -->
+  <text x="40" y="50" fill="#a5b4fc" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">RESUMEAI // INTELLIGENT RESUME ANALYZER</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">NLP RESUME PARSER • JD EMBEDDING MATCH • SKILL GAP RECOMMENDATIONS</text>
+
+  <rect x="40" y="440" width="230" height="34" rx="8" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1" />
+  <text x="55" y="462" fill="#a5b4fc" font-family="monospace" font-size="11" font-weight="bold">CATEGORY: NLP &amp; GEN AI</text>
+
+  <rect x="520" y="440" width="240" height="34" rx="8" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="1" />
+  <text x="535" y="462" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold">INTERVIEW-READY PIPELINE</text>
+</svg>

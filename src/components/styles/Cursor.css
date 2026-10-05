@@ -1,0 +1,13 @@
+/* Cursor styles reset - native cursor restored */
+* {
+  cursor: auto;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="button"],
+.btn,
+[role="button"] {
+  cursor: pointer;
+}

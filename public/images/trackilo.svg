@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="trackBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06131d" />
+      <stop offset="50%" stop-color="#0a1f2c" />
+      <stop offset="100%" stop-color="#03080e" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="trackGlow">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#trackBg)" rx="16" />
+
+  <!-- Graph grid -->
+  <g stroke="#14b8a6" stroke-width="0.5" opacity="0.1">
+    <line x1="80" y1="120" x2="720" y2="120" />
+    <line x1="80" y1="180" x2="720" y2="180" />
+    <line x1="80" y1="240" x2="720" y2="240" />
+    <line x1="80" y1="300" x2="720" y2="300" />
+    <line x1="80" y1="360" x2="720" y2="360" />
+  </g>
+
+  <!-- Expense Forecasting Curve & Area -->
+  <path d="M 80 340 Q 180 320, 260 260 T 420 220 T 560 160 T 720 130 L 720 380 L 80 380 Z" fill="url(#emeraldGrad)" opacity="0.12" />
+  <path d="M 80 340 Q 180 320, 260 260 T 420 220 T 560 160 T 720 130" fill="none" stroke="url(#emeraldGrad)" stroke-width="3.5" filter="url(#trackGlow)" />
+
+  <!-- OCR Receipt Scanning Box -->
+  <g transform="translate(120, 160)">
+    <rect width="180" height="150" rx="10" fill="rgba(15, 23, 42, 0.85)" stroke="#14b8a6" stroke-width="1.5" />
+    <text x="20" y="32" fill="#5eead4" font-family="monospace" font-size="11" font-weight="bold">RECEIPT OCR // SCAN</text>
+    <line x1="20" y1="50" x2="160" y2="50" stroke="#64748b" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="70" x2="130" y2="70" stroke="#64748b" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="90" x2="150" y2="90" stroke="#64748b" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="120" x2="90" y2="120" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
+    <!-- Laser scan line -->
+    <line x1="10" y1="80" x2="170" y2="80" stroke="#38bdf8" stroke-width="2" opacity="0.8" filter="url(#trackGlow)" />
+  </g>
+
+  <!-- Hindi/English Voice Expense Input Module -->
+  <g transform="translate(500, 230)">
+    <rect width="210" height="130" rx="10" fill="rgba(15, 23, 42, 0.85)" stroke="#06b6d4" stroke-width="1.5" />
+    <text x="18" y="28" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">VOICE NLP // HI-EN</text>
+    <!-- Audio Wave lines -->
+    <path d="M 25 70 Q 40 45, 55 70 T 85 70 T 115 50 T 145 90 T 175 70" fill="none" stroke="#22d3ee" stroke-width="2.5" />
+    <text x="18" y="112" fill="#94a3b8" font-family="monospace" font-size="10">"Spent 350 on groceries"</text>
+  </g>
+
+  <!-- Header Titles -->
+  <text x="40" y="50" fill="#2dd4bf" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">TRACKILO // SMART EXPENSE TRACKER</text>
+  <text x="40" y="75" fill="#94a3b8" font-family="monospace" font-size="11">AI FINANCIAL COPILOT • SPENDING FORECASTING • DUAL-LINGUAL VOICE</text>
+
+  <rect x="40" y="430" width="230" height="34" rx="8" fill="rgba(20, 184, 166, 0.15)" stroke="#14b8a6" stroke-width="1" />
+  <text x="55" y="452" fill="#2dd4bf" font-family="monospace" font-size="11" font-weight="bold">PIPELINE: OCR + TIME-SERIES ML</text>
+
+  <rect x="520" y="430" width="240" height="34" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1" />
+  <text x="535" y="452" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">ARCH: OFFLINE-FIRST + FASTAPI</text>
+</svg>

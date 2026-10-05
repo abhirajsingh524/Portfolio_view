@@ -1,0 +1,254 @@
+/* WhatIDo.css - AI/ML Expertise 5-Domain System */
+
+.whatIDO {
+  position: relative;
+  z-index: 9;
+  padding: 80px 0;
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.what-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Left: Navigation Buttons Column */
+.expertise-tabs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expertise-nav-btn {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+  width: 100%;
+}
+
+.expertise-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(94, 234, 212, 0.3);
+  transform: translateX(4px);
+}
+
+.expertise-nav-btn.active {
+  background: rgba(94, 234, 212, 0.14);
+  border-color: var(--accentColor, #5eead4);
+  box-shadow: 
+    0 8px 20px -6px rgba(0, 0, 0, 0.5),
+    0 0 16px 0 var(--accentGlow, rgba(94, 234, 212, 0.15));
+  transform: translateX(6px);
+}
+
+.nav-btn-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--accentColor, #5eead4);
+  flex-shrink: 0;
+}
+
+.expertise-nav-btn.active .nav-btn-icon-box {
+  background: var(--accentColor, #5eead4);
+  color: #040811;
+}
+
+.nav-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.nav-btn-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+.nav-btn-subtitle {
+  font-size: 11.5px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right: Detailed Domain Showcase Card */
+.expertise-detail-card {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 
+    0 20px 45px -15px rgba(0, 0, 0, 0.6),
+    0 0 25px 0 var(--accentGlow, rgba(94, 234, 212, 0.12));
+  animation: detailFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes detailFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+
+.detail-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.detail-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(94, 234, 212, 0.15);
+  border: 1px solid var(--accentColor, #5eead4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accentColor, #5eead4);
+  flex-shrink: 0;
+}
+
+.detail-subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.detail-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.detail-toolset-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.toolset-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accentColor, #5eead4);
+  text-transform: uppercase;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.toolset-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.toolset-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-size: 12px;
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+.badge-check {
+  color: var(--accentColor, #5eead4);
+  font-size: 13px;
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+   ================================================== */
+@media screen and (max-width: 900px) {
+  .expertise-layout {
+    grid-template-columns: 1fr;
+  }
+  .expertise-tabs-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .expertise-nav-btn {
+    min-width: 220px;
+  }
+  .expertise-detail-card {
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .whatIDO {
+    padding: 60px 0;
+  }
+  .expertise-detail-card {
+    padding: 18px;
+  }
+  .detail-header-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .detail-description {
+    font-size: 13.5px;
+  }
+}
