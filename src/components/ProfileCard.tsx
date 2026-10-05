@@ -113,7 +113,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ compact = false, className = 
           {/* Quick Status Tag */}
           <div className="profile-status-pill">
             <span className="status-indicator-dot" />
-            <span>AI/ML Developer • Invertis Univ</span>
+            <span>AI/ML Developer • Invertis University</span>
           </div>
         </div>
 

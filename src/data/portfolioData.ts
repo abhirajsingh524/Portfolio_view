@@ -63,14 +63,14 @@ export interface CertificationItem {
 export interface TechSkill {
   name: string;
   category:
-    | "PROGRAMMING"
-    | "AI / MACHINE LEARNING"
-    | "DEEP LEARNING"
-    | "NLP / GENERATIVE AI"
-    | "DATA SCIENCE"
-    | "DATABASES"
-    | "WEB / BACKEND"
-    | "TOOLS / DEVOPS";
+  | "PROGRAMMING"
+  | "AI / MACHINE LEARNING"
+  | "DEEP LEARNING"
+  | "NLP / GENERATIVE AI"
+  | "DATA SCIENCE"
+  | "DATABASES"
+  | "WEB / BACKEND"
+  | "TOOLS / DEVOPS";
   description: string;
   projectsUsing: string[];
   level?: string;

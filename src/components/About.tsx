@@ -24,7 +24,7 @@ const About = () => {
               <div className="about-image-overlay-glow" />
               <div className="about-image-badge">
                 <span className="badge-pulse" />
-                <span>AI/ML Developer • Invertis Univ</span>
+                <span>AI/ML Developer • Invertis University</span>
               </div>
             </div>
             <div className="about-card-decorative-bar">
