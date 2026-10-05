@@ -30,9 +30,11 @@ const Scene = () => {
       const renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
+        powerPreference: "high-performance",
       });
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(window.devicePixelRatio);
+      // Cap pixel ratio to max 1.5 to eliminate GPU overheating and frame drops on high-DPI screens
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
@@ -67,7 +69,7 @@ const Scene = () => {
             setTimeout(() => {
               light.turnOnLights();
               animations.startIntro();
-            }, 2500);
+            }, 300);
           });
           window.addEventListener("resize", () =>
             handleResize(renderer, camera, canvasDiv, character)
@@ -104,8 +106,25 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+
+      // Pause rendering when character canvas is scrolled off-screen
+      let isVisible = true;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+        },
+        { rootMargin: "100px", threshold: 0.01 }
+      );
+      if (canvasDiv.current) {
+        observer.observe(canvasDiv.current);
+      }
+
+      let animationFrameId: number;
       const animate = () => {
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
+        // Skip rendering computation when canvas is outside viewport
+        if (!isVisible) return;
+
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -124,7 +143,10 @@ const Scene = () => {
         renderer.render(scene, camera);
       };
       animate();
+
       return () => {
+        cancelAnimationFrame(animationFrameId);
+        observer.disconnect();
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();

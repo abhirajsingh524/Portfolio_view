@@ -10,28 +10,32 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
-      setLoaded(true);
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+  useEffect(() => {
+    if (percent >= 100 && !loaded) {
+      const timer1 = setTimeout(() => {
+        setLoaded(true);
+        const timer2 = setTimeout(() => {
+          setIsLoaded(true);
+        }, 300);
+        return () => clearTimeout(timer2);
+      }, 150);
+      return () => clearTimeout(timer1);
+    }
+  }, [percent, loaded]);
 
   useEffect(() => {
-    import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
+    if (isLoaded) {
+      setClicked(true);
+      import("./utils/initialFX").then((module) => {
         setTimeout(() => {
           if (module.initialFX) {
             module.initialFX();
           }
           setIsLoading(false);
-        }, 900);
-      }
-    });
-  }, [isLoaded]);
+        }, 300);
+      });
+    }
+  }, [isLoaded, setIsLoading]);
 
 
   return (
@@ -87,21 +91,17 @@ export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
 
   let interval = setInterval(() => {
-    if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
-      percent = percent + rand;
+    if (percent < 75) {
+      let rand = Math.round(Math.random() * 4) + 2;
+      percent = Math.min(percent + rand, 75);
+      setLoading(percent);
+    } else if (percent < 90) {
+      percent += 1;
       setLoading(percent);
     } else {
       clearInterval(interval);
-      interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
-        setLoading(percent);
-        if (percent > 91) {
-          clearInterval(interval);
-        }
-      }, 2000);
     }
-  }, 100);
+  }, 60);
 
   function clear() {
     clearInterval(interval);
@@ -113,13 +113,13 @@ export const setProgress = (setLoading: (value: number) => void) => {
       clearInterval(interval);
       interval = setInterval(() => {
         if (percent < 100) {
-          percent++;
-          setLoading(percent);
+          percent += 2;
+          setLoading(Math.min(percent, 100));
         } else {
           resolve(percent);
           clearInterval(interval);
         }
-      }, 2);
+      }, 8);
     });
   }
   return { loaded, percent, clear };
