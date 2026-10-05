@@ -149,12 +149,19 @@
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.hero-last-name {
+  color: var(--accentColor, #22d3ee);
+  display: inline-block;
+  margin-left: 0.25em;
 }
 
 .gradient-text {
+  color: var(--accentColor, #22d3ee);
   background: linear-gradient(135deg, #ffffff 30%, var(--accentColor) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Headline */
