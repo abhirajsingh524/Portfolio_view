@@ -1,5 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import * as THREE from "three";
+import {
+  Scene as ThreeScene,
+  WebGLRenderer,
+  ACESFilmicToneMapping,
+  PerspectiveCamera,
+  Clock,
+  MathUtils,
+  type Object3D,
+  type AnimationMixer,
+} from "three";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
@@ -16,10 +25,10 @@ import { setProgress } from "../Loading";
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
   const hoverDivRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef(new THREE.Scene());
+  const sceneRef = useRef(new ThreeScene());
   const { setLoading } = useLoading();
 
-  const [character, setChar] = useState<THREE.Object3D | null>(null);
+  const [character, setChar] = useState<Object3D | null>(null);
   useEffect(() => {
     if (canvasDiv.current) {
       let rect = canvasDiv.current.getBoundingClientRect();
@@ -27,7 +36,7 @@ const Scene = () => {
       const aspect = container.width / container.height;
       const scene = sceneRef.current;
 
-      const renderer = new THREE.WebGLRenderer({
+      const renderer = new WebGLRenderer({
         alpha: true,
         antialias: true,
         powerPreference: "high-performance",
@@ -35,21 +44,21 @@ const Scene = () => {
       renderer.setSize(container.width, container.height);
       // Cap pixel ratio to max 1.5 to eliminate GPU overheating and frame drops on high-DPI screens
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMapping = ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
 
-      const camera = new THREE.PerspectiveCamera(14.5, aspect, 0.1, 1000);
+      const camera = new PerspectiveCamera(14.5, aspect, 0.1, 1000);
       camera.position.z = 10;
       camera.position.set(0, 13.1, 24.7);
       camera.zoom = 1.1;
       camera.updateProjectionMatrix();
 
-      let headBone: THREE.Object3D | null = null;
+      let headBone: Object3D | null = null;
       let screenLight: any | null = null;
-      let mixer: THREE.AnimationMixer;
+      let mixer: AnimationMixer;
 
-      const clock = new THREE.Clock();
+      const clock = new Clock();
 
       const light = setLighting(scene);
       let progress = setProgress((value) => setLoading(value));
@@ -132,7 +141,7 @@ const Scene = () => {
             mouse.y,
             interpolation.x,
             interpolation.y,
-            THREE.MathUtils.lerp
+            MathUtils.lerp
           );
           light.setPointLight(screenLight);
         }

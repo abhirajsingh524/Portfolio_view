@@ -1,12 +1,22 @@
-import * as THREE from "three";
-import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
+import {
+  Color,
+  type WebGLRenderer,
+  type Scene,
+  type PerspectiveCamera,
+  type Object3D,
+  type Mesh,
+  type Material,
+  type MeshStandardMaterial,
+} from "three";
+import { GLTFLoader, type GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
 
 const setCharacter = (
-  renderer: THREE.WebGLRenderer,
-  scene: THREE.Scene,
-  camera: THREE.PerspectiveCamera
+  renderer: WebGLRenderer,
+  scene: Scene,
+  camera: PerspectiveCamera
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
@@ -22,7 +32,7 @@ const setCharacter = (
         );
         const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
 
-        let character: THREE.Object3D;
+        let character: Object3D;
         loader.load(
           blobUrl,
           async (gltf) => {
@@ -30,17 +40,17 @@ const setCharacter = (
             await renderer.compileAsync(character, camera, scene);
             character.traverse((child: any) => {
               if (child.isMesh) {
-                const mesh = child as THREE.Mesh;
+                const mesh = child as Mesh;
 
                 // Change clothing colors to match site theme
                 if (mesh.material) {
                   if (mesh.name === "BODY.SHIRT") { // The shirt mesh
-                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#8B4513");
+                    const newMat = (mesh.material as Material).clone() as MeshStandardMaterial;
+                    newMat.color = new Color("#8B4513");
                     mesh.material = newMat;
                   } else if (mesh.name === "Pant") {
-                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#000000");
+                    const newMat = (mesh.material as Material).clone() as MeshStandardMaterial;
+                    newMat.color = new Color("#000000");
                     mesh.material = newMat;
                   }
                 }

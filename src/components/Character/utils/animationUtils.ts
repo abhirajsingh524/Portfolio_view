@@ -1,21 +1,26 @@
-import * as THREE from "three";
-import { GLTF } from "three-stdlib";
+import {
+  AnimationMixer,
+  LoopOnce,
+  AnimationClip,
+  type AnimationAction,
+} from "three";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { eyebrowBoneNames, typingBoneNames } from "../../../data/boneData";
 
 const setAnimations = (gltf: GLTF) => {
   let character = gltf.scene;
-  let mixer = new THREE.AnimationMixer(character);
+  let mixer = new AnimationMixer(character);
   if (gltf.animations) {
     const introClip = gltf.animations.find(
       (clip) => clip.name === "introAnimation"
     );
     const introAction = mixer.clipAction(introClip!);
-    introAction.setLoop(THREE.LoopOnce, 1);
+    introAction.setLoop(LoopOnce, 1);
     introAction.clampWhenFinished = true;
     introAction.play();
     const clipNames = ["key1", "key2", "key5", "key6"];
     clipNames.forEach((name) => {
-      const clip = THREE.AnimationClip.findByName(gltf.animations, name);
+      const clip = AnimationClip.findByName(gltf.animations, name);
       if (clip) {
         const action = mixer?.clipAction(clip);
         action!.play();
@@ -24,7 +29,7 @@ const setAnimations = (gltf: GLTF) => {
         console.error(`Animation "${name}" not found`);
       }
     });
-    let typingAction: THREE.AnimationAction | null = null;
+    let typingAction: AnimationAction | null = null;
     typingAction = createBoneAction(gltf, mixer, "typing", typingBoneNames);
     if (typingAction) {
       typingAction.enabled = true;
@@ -53,7 +58,7 @@ const setAnimations = (gltf: GLTF) => {
     );
     let isHovering = false;
     if (eyeBrowUpAction) {
-      eyeBrowUpAction.setLoop(THREE.LoopOnce, 1);
+      eyeBrowUpAction.setLoop(LoopOnce, 1);
       eyeBrowUpAction.clampWhenFinished = true;
       eyeBrowUpAction.enabled = true;
     }
@@ -85,30 +90,30 @@ const setAnimations = (gltf: GLTF) => {
 
 const createBoneAction = (
   gltf: GLTF,
-  mixer: THREE.AnimationMixer,
+  mixer: AnimationMixer,
   clip: string,
   boneNames: string[]
-): THREE.AnimationAction | null => {
-  const AnimationClip = THREE.AnimationClip.findByName(gltf.animations, clip);
-  if (!AnimationClip) {
+): AnimationAction | null => {
+  const foundClip = AnimationClip.findByName(gltf.animations, clip);
+  if (!foundClip) {
     console.error(`Animation "${clip}" not found in GLTF file.`);
     return null;
   }
 
-  const filteredClip = filterAnimationTracks(AnimationClip, boneNames);
+  const filteredClip = filterAnimationTracks(foundClip, boneNames);
 
   return mixer.clipAction(filteredClip);
 };
 
 const filterAnimationTracks = (
-  clip: THREE.AnimationClip,
+  clip: AnimationClip,
   boneNames: string[]
-): THREE.AnimationClip => {
+): AnimationClip => {
   const filteredTracks = clip.tracks.filter((track) =>
     boneNames.some((boneName) => track.name.includes(boneName))
   );
 
-  return new THREE.AnimationClip(
+  return new AnimationClip(
     clip.name + "_filtered",
     clip.duration,
     filteredTracks
